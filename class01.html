@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ejemplo de JavaScript</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+
+<script>
+  
+  class CPersona {
+    constructor(nombre, edad ,DNI ,genero,peso,altura) {
+      this.nombre=nombre;
+      this.edad=edad;
+      this.DNI=DNI;
+      this.genero=genero;
+      this.peso=peso;
+      this.altura=altura;	  
+      	  
+    }
+
+     
+   calcularIMC(peso, altura) {
+        var DEBAJO_PESO_IDEAL = -1;
+        var PESO_IDEAL = 0;
+        var  SOBREPESO = 1;
+        var imc;
+        var cartel;
+        imc = peso / altura * altura;
+
+        if (imc < 20) {
+            cartel= "DEBAJO_PESO_IDEAL";
+        } else if (imc >= 20 && imc <= 25) {
+            cartel="PESO_IDEAL";
+        } else {
+            cartel="SOBREPESO";
+        }
+        return cartel;
+    }
+	esMayorDeEdad(edad)
+	{
+	var flag=false;
+	var no;
+	if(edad>18)
+	{
+	flag =true;;
+	}
+	 return flag;
+	}
+		
+	comprobarSexo(genero)
+	{
+	var hombree;
+	var mujerr;
+	if(genero=hombre)
+	{
+	return hombree;
+	}
+	 else
+	 {
+	 return mujerr;
+	 }
+	}
+	
+	
+	
+
+
+      
+  }
+
+  const Persona1=new CPersona('diego',20 ,24444,'hombre',50,1.75);
+  document.write('Nombre de la persona:'+Persona1.nombre+'<br>'+'edad :'+Persona1.edad+'<br>'+'DNI:'+Persona1.DNI+'<br>'+'GENERO:'+Persona1.genero+'<br>'+'peso:'+Persona1.peso+'<br>'+'altura:'+Persona1.altura+'<br>');
+  document.write("imc:"+Persona1.calcularIMC(50, 1.75)+'<br>');
+  document.write("es mayor de edad?:"+Persona1.esMayorDeEdad(20));
+    document.write("es hombre o mujer ?:"+Persona1.comprobarSexo(hombre));
+</script>
+
+</body>
+</html>
